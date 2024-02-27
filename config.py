@@ -8,5 +8,6 @@ class Config(object):
     
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://Salvador:Pepeshava_02@127.0.0.1/bdidgs081'
+    ## Creamos la base de datos en el gestor
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Salvador:Pepeshava_02@127.0.0.1/bdidgs801'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
