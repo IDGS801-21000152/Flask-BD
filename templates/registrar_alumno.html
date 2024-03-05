@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% from "_macros.html" import camposNuevos %}
+
+<div class="container">
+    <div class="row">
+        <form name="sent" action="/registrar_alumno" method="POST" id="contactForm">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    {{
+                        camposNuevos(
+                            form.nombre, 
+                            class='form-control shadow-sm'
+                        )
+                    }}
+                </div>
+        
+                <div class="col-md-3">
+                    {{
+                        camposNuevos(
+                            form.primerApellido, 
+                            class='form-control shadow-sm'
+                        )
+                    }}
+                </div>
+        
+                <div class="col-md-3">
+                    {{
+                        camposNuevos(
+                            form.segundoApellido, 
+                            class='form-control shadow-sm'
+                        )
+                    }}
+                </div>
+        
+                <div class="col-md-3">
+                    {{
+                        camposNuevos(
+                            form.correo,
+                            class='form-control shadow-sm'
+                        )
+                    }}
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary my-3 mx-4 px-4 shadow" name="signup" id="send-sign-up" value="registrar">
+                    Registrar
+                </button>
+            </div>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        </form>
+    </div>
+</div>
+{% endblock %}

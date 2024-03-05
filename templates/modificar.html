@@ -5,8 +5,18 @@
 
 <div class="container">
     <div class="row">
-        <form name="sent" action="/index" method="POST" id="contactForm">
+        <form name="sent" action="/modificar" method="POST" id="contactForm">
             <div class="row g-4">
+
+                <div class="col-md-3">
+                    {{
+                        camposNuevos(
+                            form.id, 
+                            class='form-control'
+                        )
+                    }}
+                </div>
+
                 <div class="col-md-3">
                     {{
                         camposNuevos(
@@ -45,11 +55,18 @@
             </div>
             
             <div class="col-12">
-                <button type="submit" name="signup" id="send-sign-up" value="registrar">
-                    Registrar
+                <button type="submit" class="btn btn-success" name="modify" id="send-modify" value="modificar">
+                    Modificar
                 </button>
+
+                <a href="/ABC_Completo" class="btn btn-danger">
+                    <i class="icon-undo icon-white"></i>
+                    Cancelar
+                </a>
             </div>
+
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
         </form>
     </div>
 </div>
